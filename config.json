@@ -1,0 +1,10 @@
+{
+  "baseurl": "",
+  "languageCode": "zh-CN",
+  "title": "文档管理中心",
+  "canonifyurls": true,
+  "params": {
+    "description": "golang, java,linux,docker,分布式系统",
+    "googleAnayticsId": "UA-51208124-3"
+  }
+}
