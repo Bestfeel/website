@@ -8,6 +8,19 @@ menu:
 
 ## cenots7下修改Docker的默认镜像存储位置
 
+
+### 方式一
+
+修改配置`/usr/lib/systemd/system/docker.service`
+
+使用 --graph参数指定存储位置
+
+```bash
+ExecStart=/usr/bin/dockerd --graph=/data/docker/data
+```
+
+### 方式二
+
 目前不存在则创建目录
 
 ```bash
@@ -19,14 +32,13 @@ mkdir -p /etc/systemd/system/docker.service.d
 ```bash
 [Service]
 ExecStart=
-ExecStart=/usr/bin/dockerd --graph=/home/dockerdata
+ExecStart=/usr/bin/dockerd --graph=/data/docker/data
 ```
 
 重启docker
 
 ```bash
 systemctl daemon-reload
-systemctl start docker
 systemctl restart docker
 ```
 
